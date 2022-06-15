@@ -204,20 +204,40 @@ export default {
 
             switch (type) {
                 case 'button':
-                    triggerElement = await wwLib.createElement('ww-button', { text: 'Open menu' }, {}, this.wwFrontState.sectionId);
+                    triggerElement = await wwLib.createElement(
+                        'ww-button',
+                        { text: 'Open menu' },
+                        {},
+                        this.wwFrontState.sectionId
+                    );
                     this.$emit('update:content', { button: triggerElement });
 
                     if (this.content.closeTrigger) {
-                        closeElement = await wwLib.createElement('ww-button', { text: 'Close menu' }, {},  this.wwFrontState.sectionId);
+                        closeElement = await wwLib.createElement(
+                            'ww-button',
+                            { text: 'Close menu' },
+                            {},
+                            this.wwFrontState.sectionId
+                        );
                         this.$emit('update:content', { closeElement });
                     }
                     break;
                 case 'icon':
-                    triggerElement = await wwLib.createElement('ww-icon', { icon: 'fas fa-bars' }, {}, this.wwFrontState.sectionId);
+                    triggerElement = await wwLib.createElement(
+                        'ww-icon',
+                        { icon: 'fas fa-bars' },
+                        {},
+                        this.wwFrontState.sectionId
+                    );
                     this.$emit('update:content', { button: triggerElement });
 
                     if (this.content.closeTrigger) {
-                        closeElement = await wwLib.createElement('ww-icon', { icon: 'fas fa-times' },{},  this.wwFrontState.sectionId);
+                        closeElement = await wwLib.createElement(
+                            'ww-icon',
+                            { icon: 'fas fa-times' },
+                            {},
+                            this.wwFrontState.sectionId
+                        );
                         this.$emit('update:content', { closeElement });
                     }
                     break;
@@ -225,7 +245,7 @@ export default {
                     triggerElement = await wwLib.createElement(
                         'ww-image',
                         { url: 'https://cdn.weweb.io/public/images/no_preview.jpg' },
-                        { style: { default: { width: '30px', height: '30px' } } }, 
+                        { style: { default: { width: '30px', height: '30px' } } },
                         this.wwFrontState.sectionId
                     );
                     this.$emit('update:content', { button: triggerElement });
@@ -234,7 +254,7 @@ export default {
                         closeElement = await wwLib.createElement(
                             'ww-image',
                             { url: 'https://cdn.weweb.io/public/images/no_preview.jpg' },
-                            { style: { default: { width: '30px', height: '30px' } } }, 
+                            { style: { default: { width: '30px', height: '30px' } } },
                             this.wwFrontState.sectionId
                         );
                         this.$emit('update:content', { closeElement });
@@ -250,7 +270,7 @@ export default {
 
             switch (this.content.triggerType) {
                 case 'button':
-                    closeElement = await wwLib.createElement('ww-button',{}, {}, this.wwFrontState.sectionId);
+                    closeElement = await wwLib.createElement('ww-button', {}, {}, this.wwFrontState.sectionId);
                     this.$emit('update:content', { closeElement });
                     break;
                 case 'icon':
@@ -427,14 +447,14 @@ export default {
 <style lang="scss">
 .navigation-menu {
     &__items {
-        &.-pushLast > .ww-layout-item:last-child {
-            margin-left: auto;
+        &.-pushLast > .ww-object:last-child {
+            margin-left: auto !important;
         }
     }
 
     &__panel-items {
-        &.-pushLast > .ww-layout-item:last-child {
-            margin-top: auto;
+        &.-pushLast > .ww-object:last-child {
+            margin-top: auto !important;
         }
     }
 }
