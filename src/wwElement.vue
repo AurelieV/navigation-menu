@@ -92,12 +92,14 @@ export default {
         /* wwEditor:end */
     },
     emits: ['update:content'],
+    /* wwEditor:start */
     setup() {
         const { createElement } = wwLib.useCreateElement();
         return {
             createElement,
         }
     },
+    /* wwEditor:end */
     data() {
         return {
             isOpen: false,
@@ -160,6 +162,7 @@ export default {
         'content.topOrigin'() {
             if (this.isOpen) this.computeMenuValues();
         },
+        /* wwEditor:start */
         'content.triggerType'(newVal) {
             this.updateTriggerType(newVal);
         },
@@ -172,6 +175,7 @@ export default {
                 wwLib.$off('wwLink:closePopup', this.closeMenu);
             }
         },
+        /* wwEditor:end */
     },
     mounted() {
         wwLib.$on('wwLink:clicked', this.closeMenu);
@@ -205,6 +209,8 @@ export default {
         closeMenu() {
             this.isOpen = false;
         },
+        
+        /* wwEditor:start */
         async updateTriggerType(type) {
             let triggerElement, closeElement;
 
@@ -294,6 +300,7 @@ export default {
                     break;
             }
         },
+        /* wwEditor:end */
     },
 };
 </script>
