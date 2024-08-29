@@ -5,6 +5,9 @@ export default {
             fr: 'Menu de navigation',
         },
     },
+    options: {
+        displayAllowedValues: ['flex', 'inline-flex'],
+    },
     properties: {
         horizontalAlignement: {
             label: { en: 'Horizontal alignment', fr: 'Alignement horizontal' },
@@ -204,7 +207,7 @@ export default {
         button: {
             // It's called button to ensure backward compatibility
             hidden: true,
-            defaultValue: {isWwObject: true, type: "ww-button"},
+            defaultValue: { isWwObject: true, type: 'ww-button' },
         },
         closeElement: {
             hidden: true,
